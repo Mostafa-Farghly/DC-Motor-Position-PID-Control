@@ -50,6 +50,17 @@ typedef enum
 }Input_Mode;
 
 
+/*
+ * Conversion Trigger Sources.
+ * ADCx_SC2[ADTRG] value.
+ */
+typedef enum
+{
+	SW = 0,				/* Select Software triger */
+	HW,					/* Select Hardware triger */
+}Triger_Select;
+
+
 /* ADC configurations struct */
 typedef struct
 {
@@ -59,6 +70,8 @@ typedef struct
 	
 	Input_Mode In_Mode;		/* Select single ended or differential input.
 								Check enum Input_Mode for available values */
+	
+	Triger_Select Trig;		/* Conversion trigger source. Check enum Triger_Select for available values */
 	
 	/*TODO*/
 	
